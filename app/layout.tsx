@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <script
           dangerouslySetInnerHTML={{
@@ -47,9 +47,9 @@ export default function RootLayout({
                 try {
                   const savedTheme = localStorage.getItem('theme');
                   const theme = savedTheme === 'alucard' ? 'alucard' : 'dracula';
-                  document.documentElement.setAttribute('data-theme', theme);
+                  document.documentElement.classList.add(theme);
                 } catch (e) {
-                  document.documentElement.setAttribute('data-theme', 'dracula');
+                  document.documentElement.classList.add('dracula');
                 }
               })();
             `,

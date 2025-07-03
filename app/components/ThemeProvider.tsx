@@ -26,7 +26,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (mounted) {
-      document.documentElement.setAttribute('data-theme', theme);
+      // Remove previous theme class
+      document.documentElement.classList.remove('dracula', 'alucard');
+      // Add new theme class
+      document.documentElement.classList.add(theme);
       localStorage.setItem('theme', theme);
     }
   }, [theme, mounted]);
