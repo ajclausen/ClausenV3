@@ -127,7 +127,7 @@ export default function Home() {
             </li>
             <li>
               <a 
-                href="https://www.linkedin.com/in/andrew-clausen/" 
+                href="https://www.linkedin.com/in/andrewjclausen/" 
                 target="_blank" 
                 rel="noreferrer noopener"
                 className="text-slate-400 hover:text-teal-300 transition-colors"
