@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     title: "Andrew Clausen | Portfolio",
     description: "Developer passionate about crafting accessible, pixel-perfect user interfaces",
   },
+  icons: {
+    icon: "/Turborepo.svg",
+  },
 };
 
 export default function RootLayout({
