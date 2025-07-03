@@ -7,6 +7,8 @@ export interface Project {
   technologies: string[];
   githubUrl?: string;
   githubStars?: string;
+  year: string;
+  madeAt?: string;
 }
 
 export const projects: Project[] = [
@@ -16,7 +18,9 @@ export const projects: Project[] = [
     url: "https://www.newline.co/courses/build-a-spotify-connected-app",
     description: "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
     imageUrl: "/images/spotify-course.jpg",
-    technologies: []
+    technologies: [],
+    year: "2020",
+    madeAt: "newline"
   },
   {
     id: "spotify-profile",
@@ -26,7 +30,9 @@ export const projects: Project[] = [
     imageUrl: "/images/spotify-profile.jpg",
     technologies: ["React", "Express", "Spotify API", "Heroku"],
     githubUrl: "https://github.com/bchiang7/spotify-profile",
-    githubStars: "689"
+    githubStars: "689",
+    year: "2020",
+    madeAt: "Personal"
   },
   {
     id: "halcyon-theme",
@@ -36,7 +42,9 @@ export const projects: Project[] = [
     imageUrl: "/images/halcyon-theme.jpg",
     technologies: [],
     githubUrl: "https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode",
-    githubStars: "100k+ Installs"
+    githubStars: "100k+ Installs",
+    year: "2019",
+    madeAt: "Personal"
   },
   {
     id: "v4",
@@ -46,6 +54,8 @@ export const projects: Project[] = [
     imageUrl: "/images/v4.jpg",
     technologies: ["Gatsby", "Styled Components", "Netlify"],
     githubUrl: "https://github.com/bchiang7/v4",
-    githubStars: "7,938"
+    githubStars: "7,938",
+    year: "2021",
+    madeAt: "Personal"
   }
 ];

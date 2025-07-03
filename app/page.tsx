@@ -2,7 +2,6 @@
 
 import { experiences } from "@/data/experience";
 import { projects } from "@/data/projects";
-import { blogPosts } from "@/data/writing";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,7 +10,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const sections = ["about", "experience", "projects"];
+    const sections = ["about", "experience"]; // , "projects"];
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,10 +45,10 @@ export default function Home() {
               <Link href="/">Andrew Clausen</Link>
             </h1>
             <h2 className="mt-3 text-[1.25rem] font-medium leading-[1.75] text-slate-200">
-              System Engineer
+              System Engineer at ECO Parking
             </h2>
             <p className="mt-4 max-w-xs text-base font-normal leading-relaxed text-slate-400">
-              I build robust systems and craft digital experiences with precision.
+              I architect infrastructure for 50+ smart parking facilities and build tools that solve real problems.
             </p>
             
             {/* Navigation - Hidden on mobile, shown on lg+ */}
@@ -87,6 +86,7 @@ export default function Home() {
                     </span>
                   </a>
                 </li>
+                {/* Projects navigation temporarily disabled
                 <li>
                   <a href="#projects" className="group flex items-center py-3">
                     <span className={`nav-indicator mr-4 h-px transition-all ${
@@ -103,6 +103,7 @@ export default function Home() {
                     </span>
                   </a>
                 </li>
+                */}
               </ul>
             </nav>
           </div>
@@ -150,50 +151,33 @@ export default function Home() {
               </div>
               <div>
                 <p className="mb-4 leading-relaxed text-slate-400">
-                  I&apos;m a technical professional who bridges the gap between engineering and product development. My journey began with web design and development through{" "}
-                  <a href="https://bitwiseindustries.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                    Bitwise Fellows
-                    <span className="sr-only"> (opens in a new tab)</span>
+                  I&apos;m a self-taught System Engineer who transformed from zero technical knowledge into the sole network architect for 50+ smart parking facilities nationwide. My unconventional path through{" "}
+                  <a href="#experience" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
+                    Apprentice University&apos;s hands-on program
                   </a>
-                  , where I discovered my passion for creating clean, modern digital experiences that marry good design with technical excellence.
+                  {" "}taught me that the best solutions come from understanding both the technical details and business impact.
                 </p>
                 <p className="mb-4 leading-relaxed text-slate-400">
-                  Currently, I&apos;m a System Engineer at{" "}
-                  <a href="https://www.ecoparking.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
+                  At{" "}
+                  <a href="https://www.ecoparkingtechnologies.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
                     ECO Parking Technologies
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
-                  , where I configure{" "}
-                  <a href="https://ui.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                    Ubiquiti networks
+                  , I&apos;ve built the infrastructure that powers some of the nation&apos;s largest parking deployments, including a 693-sensor Las Vegas casino requiring custom 10G fiber solutions. When our legacy system threatened to limit our growth, I led the migration to a modern{" "}
+                  <a href="https://www.cloudflare.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
+                    Cloudflare-based architecture
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
-                  , manage product installations, and integrate complex systems. My role combines technical expertise with strategic thinking to deliver solutions that work seamlessly in real-world environments.
+                  , eliminating vendor lock-in and saving thousands monthly.
                 </p>
                 <p className="mb-4 leading-relaxed text-slate-400">
-                  Throughout my career, I&apos;ve worked with diverse organizations including{" "}
-                  <a href="#" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">OMNISource Marketing<span className="sr-only"> (opens in a new tab)</span></a>,{" "}
-                  <a href="#" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">Bitwise Solutions<span className="sr-only"> (opens in a new tab)</span></a>,{" "}
-                  <a href="https://www.t2systems.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">T2 Systems<span className="sr-only"> (opens in a new tab)</span></a>, and{" "}
-                  <a href="#" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">Sincerely Hers<span className="sr-only"> (opens in a new tab)</span></a>.
-                  I also founded{" "}
-                  <a href="#projects" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                    NexusOpus
-                  </a>
-                  , where I designed and developed{" "}
-                  <a href="https://wordpress.org/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                    WordPress sites
-                    <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
-                  {" "}for high-profile clients, further honing my eye for quality design and user experience.
+                  Beyond infrastructure, I&apos;m a builder at heart. I&apos;ve created production applications that our teams use daily—from a React-based cost calculator that speeds up sales quotes to a full-stack project tracker that integrates with legacy systems. Each tool solves real problems I&apos;ve experienced firsthand.
                 </p>
                 <p className="mb-4 leading-relaxed text-slate-400">
-                  When I&apos;m not configuring systems or crafting digital experiences, you&apos;ll find me exploring the latest tech innovations,{" "}
-                  <a href="https://github.com/ajclausen" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                    contributing to open source
-                    <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
-                  , or diving into intriguing new topics. I believe in continuous learning and staying curious about the ever-evolving world of technology. Feel free to reach out at{" "}
+                  My technical toolkit spans from low-level Linux administration to modern web frameworks, but what sets me apart is my approach: when I encounter a challenge, I don&apos;t wait for someone else to solve it. Whether it&apos;s teaching myself fiber optics through YouTube or building a Ruby microservice to bridge incompatible systems, I find a way forward.
+                </p>
+                <p className="mb-4 leading-relaxed text-slate-400">
+                  Currently pursuing my BSNES degree to formalize my practical experience, I&apos;m excited about the intersection of IoT, cloud infrastructure, and smart city technology. I believe the best engineering happens when you deeply understand the problem space—and I&apos;ve been in the trenches long enough to know what works. Feel free to reach out at{" "}
                   <a href="mailto:andrew@clausen.app" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
                     andrew@clausen.app
                   </a>
@@ -329,7 +313,7 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Projects Section */}
+            {/* Projects Section - Temporarily disabled for launch
             <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-lightest-slate lg:sr-only">Projects</h2>
@@ -455,116 +439,10 @@ export default function Home() {
                 </div>
               </div>
             </section>
-
-            {/* Writing Section */}
-            <section id="writing" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Blog posts">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-lightest-slate lg:sr-only">Writing</h2>
-              </div>
-              <div>
-                <ul className="group/list">
-                  {blogPosts.map((post) => (
-                    <li key={post.id} className="mb-12">
-                      <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-lightest-navy/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                        <div className="z-10 sm:col-span-2 pt-1">
-                          {post.icon === "♿" && (
-                            <div className="rounded border-2 border-slate/10 p-2 bg-lightest-navy/10 w-fit">
-                              <svg className="w-10 h-10 text-slate-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15L13.5 7.5C13.1 7.1 12.6 6.9 12 6.9S10.9 7.1 10.5 7.5L7.91 10.09C7.66 10.34 7.66 10.76 7.91 11.01L10.5 13.6C10.9 14 11.4 14.2 12 14.2S13.1 14 13.5 13.6L15.09 12.01L15 15L12.96 16.29L10.5 20.5H12.2L14.42 16.81L17 15.5V11.5H21V9ZM8.5 12.5L7.5 13.5L4 10L7.5 6.5L8.5 7.5L6 10L8.5 12.5Z"/>
-                              </svg>
-                            </div>
-                          )}
-                          {post.icon === "🔭" && (
-                            <div className="rounded border-2 border-slate/10 p-2 bg-lightest-navy/10 w-fit">
-                              <svg className="w-10 h-10 text-slate-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M21.53 20.47L17.87 16.81C18.55 15.58 18.97 14.17 18.97 12.53C18.97 8.36 15.61 5 11.44 5C7.27 5 3.91 8.36 3.91 12.53S7.27 20.06 11.44 20.06C13.08 20.06 14.49 19.64 15.72 18.96L19.38 22.62C19.68 22.92 20.17 22.92 20.47 22.62L22.62 20.47C22.92 20.17 22.92 19.68 21.53 20.47ZM11.44 18C8.4 18 5.94 15.54 5.94 12.5S8.4 7 11.44 7S16.94 9.46 16.94 12.5S14.48 18 11.44 18Z"/>
-                              </svg>
-                            </div>
-                          )}
-                          {post.icon === "🎃" && (
-                            <div className="rounded border-2 border-slate/10 p-2 bg-lightest-navy/10 w-fit">
-                              <svg className="w-10 h-10 text-slate-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM9 8C8.45 8 8 8.45 8 9C8 9.55 8.45 10 9 10C9.55 10 10 9.55 10 9C10 8.45 9.55 8 9 8ZM15 8C14.45 8 14 8.45 14 9C14 9.55 14.45 10 15 10C15.55 10 16 9.55 16 9C16 8.45 15.55 8 15 8ZM12 17.5C14.33 17.5 16.31 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5Z"/>
-                              </svg>
-                            </div>
-                          )}
-                        </div>
-                        <div className="z-10 sm:col-span-6">
-                          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">{post.year}</p>
-                          <h3>
-                            <a
-                              className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
-                              href={post.url}
-                              target="_blank"
-                              rel="noreferrer noopener"
-                              aria-label={`${post.title} (opens in a new tab)`}
-                            >
-                              <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                              <span>
-                                {post.title}
-                                {" "}
-                                <span className="inline-block">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                    className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-0.5"
-                                    aria-hidden="true"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                </span>
-                              </span>
-                            </a>
-                          </h3>
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
+            */
 
             {/* Footer with attribution */}
             <footer className="max-w-md pb-16 text-sm text-slate-400 sm:pb-0">
-              <p>
-                Loosely designed in{" "}
-                <a href="https://www.figma.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                  Figma
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>{" "}
-                and coded in{" "}
-                <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                  Visual Studio Code
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>{" "}
-                by yours truly. Built with{" "}
-                <a href="https://nextjs.org/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                  Next.js
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>{" "}
-                and{" "}
-                <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                  Tailwind CSS
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-                , deployed with{" "}
-                <a href="https://vercel.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                  Vercel
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-                . All text is set in the{" "}
-                <a href="https://rsms.me/inter/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
-                  Inter
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>{" "}
-                typeface.
-              </p>
               <p className="mt-4">
                 Inspired by{" "}
                 <a href="https://brittanychiang.com" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
@@ -577,7 +455,8 @@ export default function Home() {
         </main>
       </div>
       
-      {/* Time Travel Button (TARDIS) */}
+      {/* Time Travel Button commented out for now */}
+      {/**
       <button
         className="fixed bottom-8 right-8 z-50 flex items-center gap-3 px-5 py-3 bg-lightest-navy/90 backdrop-blur rounded-full shadow-lg hover:bg-lightest-navy transition-all duration-300 group"
         aria-label="Click to time travel Spinning Tardis from Doctor Who"
@@ -596,6 +475,7 @@ export default function Home() {
           <path d="M2 10L10 14L18 10" strokeWidth="1.5" />
         </svg>
       </button>
+      */}
     </>
   );
 }
