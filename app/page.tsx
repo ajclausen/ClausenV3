@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       {/* Skip to content link for accessibility */}
-      <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-cyan text-navy px-4 py-2 rounded">
+      <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-dracula-cyan text-dracula-background px-4 py-2 rounded">
         Skip to Content
       </a>
 
@@ -42,13 +42,13 @@ export default function Home() {
         {/* Left side - Fixed header and nav */}
         <header className="px-6 py-24 bg-[rgb(15,23,42)] lg:bg-transparent lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[45%] lg:flex-col lg:justify-between lg:py-24 lg:px-12">
           <div>
-            <h1 className="text-[3rem] font-bold tracking-[-0.025em] leading-none text-slate-200">
+            <h1 className="text-[3rem] font-bold tracking-[-0.025em] leading-none text-dracula-foreground">
               <Link href="/">Andrew Clausen</Link>
             </h1>
-            <h2 className="mt-3 text-[1.25rem] font-medium leading-[1.75] text-slate-200">
+            <h2 className="mt-3 text-[1.25rem] font-medium leading-[1.75] text-dracula-foreground">
               System Engineer at ECO Parking
             </h2>
-            <p className="mt-4 max-w-xs text-base font-normal leading-relaxed text-slate-400">
+            <p className="mt-4 max-w-xs text-base font-normal leading-relaxed text-dracula-comment">
               I architect infrastructure for 50+ smart parking facilities and build tools that solve real problems.
             </p>
             
@@ -60,12 +60,12 @@ export default function Home() {
                     <span className={`nav-indicator mr-4 h-px transition-all ${
                       activeSection === "about" 
                         ? "w-16 bg-lightest-slate" 
-                        : "w-8 bg-slate group-hover:w-16 group-hover:bg-lightest-slate group-focus-visible:w-16 group-focus-visible:bg-lightest-slate"
+                        : "w-8 bg-dracula-comment group-hover:w-16 group-hover:bg-dracula-foreground group-focus-visible:w-16 group-focus-visible:bg-dracula-foreground"
                     }`}></span>
                     <span className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors ${
                       activeSection === "about"
-                        ? "text-lightest-slate"
-                        : "text-slate-400 group-hover:text-teal-300 group-focus-visible:text-teal-300"
+                        ? "text-dracula-foreground"
+                        : "text-dracula-comment group-hover:text-dracula-pink group-focus-visible:text-dracula-pink"
                     }`}>
                       About
                     </span>
@@ -76,12 +76,12 @@ export default function Home() {
                     <span className={`nav-indicator mr-4 h-px transition-all ${
                       activeSection === "experience" 
                         ? "w-16 bg-lightest-slate" 
-                        : "w-8 bg-slate group-hover:w-16 group-hover:bg-lightest-slate group-focus-visible:w-16 group-focus-visible:bg-lightest-slate"
+                        : "w-8 bg-dracula-comment group-hover:w-16 group-hover:bg-dracula-foreground group-focus-visible:w-16 group-focus-visible:bg-dracula-foreground"
                     }`}></span>
                     <span className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors ${
                       activeSection === "experience"
-                        ? "text-lightest-slate"
-                        : "text-slate-400 group-hover:text-teal-300 group-focus-visible:text-teal-300"
+                        ? "text-dracula-foreground"
+                        : "text-dracula-comment group-hover:text-dracula-pink group-focus-visible:text-dracula-pink"
                     }`}>
                       Experience
                     </span>
@@ -93,12 +93,12 @@ export default function Home() {
                     <span className={`nav-indicator mr-4 h-px transition-all ${
                       activeSection === "projects" 
                         ? "w-16 bg-lightest-slate" 
-                        : "w-8 bg-slate group-hover:w-16 group-hover:bg-lightest-slate group-focus-visible:w-16 group-focus-visible:bg-lightest-slate"
+                        : "w-8 bg-dracula-comment group-hover:w-16 group-hover:bg-dracula-foreground group-focus-visible:w-16 group-focus-visible:bg-dracula-foreground"
                     }`}></span>
                     <span className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors ${
                       activeSection === "projects"
-                        ? "text-lightest-slate"
-                        : "text-slate-400 group-hover:text-teal-300 group-focus-visible:text-teal-300"
+                        ? "text-dracula-foreground"
+                        : "text-dracula-comment group-hover:text-dracula-pink group-focus-visible:text-dracula-pink"
                     }`}>
                       Projects
                     </span>
@@ -116,7 +116,7 @@ export default function Home() {
                 href="https://github.com/ajclausen" 
                 target="_blank" 
                 rel="noreferrer noopener"
-                className="text-slate-400 hover:text-teal-300 transition-colors"
+                className="text-dracula-comment hover:text-dracula-pink transition-colors"
                 aria-label="GitHub (opens in a new tab)"
               >
                 <span className="sr-only">GitHub</span>
@@ -130,7 +130,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/andrewjclausen/" 
                 target="_blank" 
                 rel="noreferrer noopener"
-                className="text-slate-400 hover:text-teal-300 transition-colors"
+                className="text-dracula-comment hover:text-dracula-pink transition-colors"
                 aria-label="LinkedIn (opens in a new tab)"
               >
                 <span className="sr-only">LinkedIn</span>
@@ -143,43 +143,43 @@ export default function Home() {
         </header>
 
         {/* Right side - Scrollable content */}
-        <main id="content" className="px-6 pb-24 lg:w-[55%] lg:py-24 lg:px-12 text-slate-400">
+        <main id="content" className="px-6 pb-24 lg:w-[55%] lg:py-24 lg:px-12 text-dracula-comment">
           <div className="max-w-2xl">
             {/* About Section */}
             <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-lightest-slate lg:sr-only">About</h2>
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dracula-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">About</h2>
               </div>
               <div>
-                <p className="mb-4 leading-relaxed text-slate-400">
+                <p className="mb-4 leading-relaxed text-dracula-comment">
                   I&apos;m a self-taught System Engineer who transformed from zero technical knowledge into the sole network architect for 50+ smart parking facilities nationwide. My unconventional path through{" "}
-                  <a href="#experience" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
+                  <a href="#experience" className="font-medium text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink">
                     Apprentice University&apos;s hands-on program
                   </a>
                   {" "}taught me that the best solutions come from understanding both the technical details and business impact.
                 </p>
-                <p className="mb-4 leading-relaxed text-slate-400">
+                <p className="mb-4 leading-relaxed text-dracula-comment">
                   At{" "}
-                  <a href="https://www.ecoparkingtechnologies.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
+                  <a href="https://www.ecoparkingtechnologies.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink">
                     ECO Parking Technologies
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                   , I&apos;ve built the infrastructure that powers some of the nation&apos;s largest parking deployments, including a 693-sensor Las Vegas casino requiring custom 10G fiber solutions. When our legacy system threatened to limit our growth, I led the migration to a modern{" "}
-                  <a href="https://www.cloudflare.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
+                  <a href="https://www.cloudflare.com/" target="_blank" rel="noreferrer noopener" className="font-medium text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink">
                     Cloudflare-based architecture
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                   , eliminating vendor lock-in and saving thousands monthly.
                 </p>
-                <p className="mb-4 leading-relaxed text-slate-400">
+                <p className="mb-4 leading-relaxed text-dracula-comment">
                   Beyond infrastructure, I&apos;m a builder at heart. I&apos;ve created production applications that our teams use daily—from a React-based cost calculator that speeds up sales quotes to a full-stack project tracker that integrates with legacy systems. Each tool solves real problems I&apos;ve experienced firsthand.
                 </p>
-                <p className="mb-4 leading-relaxed text-slate-400">
+                <p className="mb-4 leading-relaxed text-dracula-comment">
                   My technical toolkit spans from low-level Linux administration to modern web frameworks, but what sets me apart is my approach: when I encounter a challenge, I don&apos;t wait for someone else to solve it. Whether it&apos;s teaching myself fiber optics through YouTube or building a Ruby microservice to bridge incompatible systems, I find a way forward.
                 </p>
-                <p className="mb-4 leading-relaxed text-slate-400">
+                <p className="mb-4 leading-relaxed text-dracula-comment">
                   Currently pursuing my BSNES degree to formalize my practical experience, I&apos;m excited about the intersection of IoT, cloud infrastructure, and smart city technology. I believe the best engineering happens when you deeply understand the problem space—and I&apos;ve been in the trenches long enough to know what works. Feel free to reach out at{" "}
-                  <a href="mailto:andrew@clausen.app" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
+                  <a href="mailto:andrew@clausen.app" className="font-medium text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink">
                     andrew@clausen.app
                   </a>
                   .
@@ -189,23 +189,23 @@ export default function Home() {
 
             {/* Experience Section */}
             <section id="experience" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-lightest-slate lg:sr-only">Experience</h2>
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dracula-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">Experience</h2>
               </div>
               <div>
                 <ol className="group/list">
                   {experiences.map((experience) => (
                     <li key={experience.id} className="mb-12">
                       <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-lightest-navy/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-                        <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-400 sm:col-span-2" aria-label={experience.dateRange}>
+                        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-dracula-current-line/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+                        <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-dracula-comment sm:col-span-2" aria-label={experience.dateRange}>
                           {experience.dateRange}
                         </header>
                         <div className="z-10 sm:col-span-6">
-                          <h3 className="font-medium leading-snug text-lightest-slate">
+                          <h3 className="font-medium leading-snug text-dracula-foreground">
                             <div>
                               <a
-                                className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                                className="inline-flex items-baseline font-medium leading-tight text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink group/link text-base"
                                 href={experience.companyUrl}
                                 target="_blank"
                                 rel="noreferrer noopener"
@@ -236,20 +236,20 @@ export default function Home() {
                             {experience.previousTitles && (
                               <div className="mt-0.5">
                                 {experience.previousTitles.map((title, index) => (
-                                  <div key={index} className="text-slate-400 text-sm" aria-label={`Previous role: ${title}`}>
+                                  <div key={index} className="text-dracula-comment text-sm" aria-label={`Previous role: ${title}`}>
                                     <span className="font-medium">→</span> {title}
                                   </div>
                                 ))}
                               </div>
                             )}
                           </h3>
-                          <p className="mt-2 text-sm leading-relaxed text-slate-400">{experience.description}</p>
+                          <p className="mt-2 text-sm leading-relaxed text-dracula-comment">{experience.description}</p>
                           {experience.links && (
                             <ul className="mt-2 flex flex-wrap" aria-label="Related links">
                               {experience.links.map((link, index) => (
                                 <li key={index} className="mr-4">
                                   <a
-                                    className="relative mt-2 inline-flex items-center text-sm font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+                                    className="relative mt-2 inline-flex items-center text-sm font-medium text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink"
                                     href={link.url}
                                     target="_blank"
                                     rel="noreferrer noopener"
@@ -273,7 +273,7 @@ export default function Home() {
                           <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
                             {experience.technologies.map((tech) => (
                               <li key={tech} className="mr-1.5 mt-2">
-                                <div className="flex items-center rounded-full bg-cyan/10 px-3 py-1 text-xs font-medium leading-5 text-cyan">
+                                <div className="flex items-center rounded-full bg-dracula-purple/10 px-3 py-1 text-xs font-medium leading-5 text-dracula-purple">
                                   {tech}
                                 </div>
                               </li>
@@ -286,7 +286,7 @@ export default function Home() {
                 </ol>
                 <div className="mt-12">
                   <a
-                    className="inline-flex items-center font-medium leading-tight text-slate-200 group"
+                    className="inline-flex items-center font-medium leading-tight text-dracula-foreground group"
                     aria-label="View Full Resume (opens in a new tab)"
                     href="/resume.pdf"
                   >
@@ -316,19 +316,19 @@ export default function Home() {
 
             {/* Projects Section - Temporarily disabled for launch
             <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-lightest-slate lg:sr-only">Projects</h2>
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dracula-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">Projects</h2>
               </div>
               <div>
                 <ul className="group/list">
                   {projects.map((project) => (
                     <li key={project.id} className="mb-12">
                       <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-lightest-navy/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+                        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-dracula-current-line/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
                         <div className="z-10 sm:order-2 sm:col-span-6">
                           <h3>
                             <a
-                              className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                              className="inline-flex items-baseline font-medium leading-tight text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink group/link text-base"
                               href={project.url || project.githubUrl}
                               target="_blank"
                               rel="noreferrer noopener"
@@ -356,10 +356,10 @@ export default function Home() {
                               </span>
                             </a>
                           </h3>
-                          <p className="mt-2 text-sm leading-relaxed text-slate-400">{project.description}</p>
+                          <p className="mt-2 text-sm leading-relaxed text-dracula-comment">{project.description}</p>
                           {project.githubStars && (
                             <a
-                              className="relative mt-2 inline-flex items-center text-sm font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
+                              className="relative mt-2 inline-flex items-center text-sm font-medium text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink"
                               href={project.githubUrl}
                               target="_blank"
                               rel="noreferrer noopener"
@@ -385,7 +385,7 @@ export default function Home() {
                             <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
                               {project.technologies.map((tech) => (
                                 <li key={tech} className="mr-1.5 mt-2">
-                                  <div className="flex items-center rounded-full bg-cyan/10 px-3 py-1 text-xs font-medium leading-5 text-cyan">
+                                  <div className="flex items-center rounded-full bg-dracula-purple/10 px-3 py-1 text-xs font-medium leading-5 text-dracula-purple">
                                     {tech}
                                   </div>
                                 </li>
@@ -413,7 +413,7 @@ export default function Home() {
                 </ul>
                 <div className="mt-12">
                   <a
-                    className="inline-flex items-center leading-tight text-slate-200 font-medium group"
+                    className="inline-flex items-center leading-tight text-dracula-foreground font-medium group"
                     aria-label="View Full Project Archive"
                     href="/archive"
                   >
@@ -443,10 +443,10 @@ export default function Home() {
             */}
 
             {/* Footer with attribution */}
-            <footer className="max-w-md pb-16 text-sm text-slate-400 sm:pb-0">
+            <footer className="max-w-md pb-16 text-sm text-dracula-comment sm:pb-0">
               <p className="mt-4">
                 Inspired by{" "}
-                <a href="https://brittanychiang.com" target="_blank" rel="noreferrer noopener" className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300">
+                <a href="https://brittanychiang.com" target="_blank" rel="noreferrer noopener" className="font-medium text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink">
                   Brittany Chiang&apos;s portfolio design
                 </a>
                 .
@@ -463,9 +463,9 @@ export default function Home() {
         aria-label="Click to time travel Spinning Tardis from Doctor Who"
         title="Click to time travel"
       >
-        <span className="text-slate-400 text-sm whitespace-nowrap">Click to time travel</span>
+        <span className="text-dracula-comment text-sm whitespace-nowrap">Click to time travel</span>
         <svg 
-          className="w-5 h-5 text-cyan animate-spin-slow" 
+          className="w-5 h-5 text-dracula-purple animate-spin-slow" 
           viewBox="0 0 20 20" 
           fill="currentColor"
           aria-hidden="true"
