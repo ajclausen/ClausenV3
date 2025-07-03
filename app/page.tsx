@@ -30,6 +30,7 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
+  
   return (
     <>
       {/* Skip to content link for accessibility */}
@@ -439,7 +440,7 @@ export default function Home() {
                 </div>
               </div>
             </section>
-            */
+            */}
 
             {/* Footer with attribution */}
             <footer className="max-w-md pb-16 text-sm text-slate-400 sm:pb-0">
