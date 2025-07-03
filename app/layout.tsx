@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./components/ThemeProvider";
 import ThemeToggle from "./components/ThemeToggle";
+import SmoothScroll from "./components/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,22 +38,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable} data-theme="dracula">
-      <body className="antialiased">
+    <html lang="en" className={inter.variable}>
+      <body className="antialiased" suppressHydrationWarning>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
-                  const theme = localStorage.getItem('theme') || 'dracula';
+                  const savedTheme = localStorage.getItem('theme');
+                  const theme = savedTheme === 'alucard' ? 'alucard' : 'dracula';
                   document.documentElement.setAttribute('data-theme', theme);
-                } catch (e) {}
+                } catch (e) {
+                  document.documentElement.setAttribute('data-theme', 'dracula');
+                }
               })();
             `,
           }}
         />
-        <ThemeToggle />
-        {children}
+        <ThemeProvider>
+          <ThemeToggle />
+          <SmoothScroll />
+          {children}
+        </ThemeProvider>
         <script
           dangerouslySetInnerHTML={{
             __html: `

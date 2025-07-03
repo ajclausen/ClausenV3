@@ -1,32 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useTheme } from './ThemeProvider';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'dracula' | 'alucard'>('dracula');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    // Check for saved theme preference or default to 'dracula'
-    const savedTheme = localStorage.getItem('theme') as 'dracula' | 'alucard' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dracula' ? 'alucard' : 'dracula';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  };
-
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return null;
-  }
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button
