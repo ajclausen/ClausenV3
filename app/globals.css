@@ -2,18 +2,18 @@
 
 /* Define standard Tailwind colors for v4 */
 @theme {
-  /* Dracula Theme Colors */
-  --color-dracula-background: #282a36;
-  --color-dracula-current-line: #44475a;
-  --color-dracula-foreground: #f8f8f2;
-  --color-dracula-comment: #6272a4;
-  --color-dracula-cyan: #8be9fd;
-  --color-dracula-green: #50fa7b;
-  --color-dracula-orange: #ffb86c;
-  --color-dracula-pink: #ff79c6;
-  --color-dracula-purple: #bd93f9;
-  --color-dracula-red: #ff5555;
-  --color-dracula-yellow: #f1fa8c;
+  /* Use CSS variable references that will update with theme */
+  --color-dracula-background: var(--dracula-background);
+  --color-dracula-current-line: var(--dracula-current-line);
+  --color-dracula-foreground: var(--dracula-foreground);
+  --color-dracula-comment: var(--dracula-comment);
+  --color-dracula-cyan: var(--dracula-cyan);
+  --color-dracula-green: var(--dracula-green);
+  --color-dracula-orange: var(--dracula-orange);
+  --color-dracula-pink: var(--dracula-pink);
+  --color-dracula-purple: var(--dracula-purple);
+  --color-dracula-red: var(--dracula-red);
+  --color-dracula-yellow: var(--dracula-yellow);
   
   /* Legacy mappings for easier transition */
   --color-slate-200: var(--dracula-foreground);
@@ -22,8 +22,9 @@
   --color-slate: var(--dracula-comment);
 }
 
+/* Default theme variables */
 :root {
-  /* Dracula Theme Colors */
+  /* Dracula Theme Colors (default) */
   --dracula-background: #282a36;
   --dracula-current-line: #44475a;
   --dracula-foreground: #f8f8f2;
@@ -55,6 +56,40 @@
   /* Spacing */
   --nav-height: 100px;
   --nav-scroll-height: 70px;
+}
+
+/* Alucard Theme (Light) */
+html[data-theme="alucard"],
+html[data-theme="alucard"] body,
+[data-theme="alucard"] {
+  /* Alucard Light Theme Colors */
+  --dracula-background: #f8f8f2;
+  --dracula-current-line: #e0e0e0;
+  --dracula-foreground: #282a36;
+  --dracula-comment: #6272a4;
+  --dracula-cyan: #0fa5a5;
+  --dracula-green: #00a550;
+  --dracula-orange: #ff6e00;
+  --dracula-pink: #ff1493;
+  --dracula-purple: #7c3aed;
+  --dracula-red: #dc2626;
+  --dracula-yellow: #facc15;
+  
+  /* Legacy variables mapped to Alucard */
+  --navy: var(--dracula-background);
+  --light-navy: var(--dracula-current-line);
+  --lightest-navy: var(--dracula-current-line);
+  --slate: var(--dracula-comment);
+  --light-slate: var(--dracula-foreground);
+  --lightest-slate: var(--dracula-foreground);
+  --white: var(--dracula-foreground);
+  --cyan: var(--dracula-cyan);
+  --highlight: var(--dracula-purple);
+  
+  --slate-400: var(--dracula-comment);
+  --slate-200: var(--dracula-foreground);
+  --bg-dark: var(--dracula-background);
+  --teal-300: var(--dracula-cyan);
 }
 
 @theme inline {
@@ -97,7 +132,7 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--bg-dark);
+  background-color: var(--dracula-background);
   font-family: var(--font-sans);
   font-feature-settings: "ss03", "cv02", "cv11";
   font-size: 16px;
@@ -107,6 +142,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow-x: hidden;
+  transition: background-color 0.3s ease;
 }
 
 /* Cursor bloom effect */
@@ -121,6 +157,10 @@ body::before {
   background: radial-gradient(600px at var(--x, 0) var(--y, 0), rgba(189, 147, 249, 0.15), transparent 80%);
   z-index: -1;
   transition: opacity 0.3s ease;
+}
+
+[data-theme="alucard"] body::before {
+  background: radial-gradient(600px at var(--x, 0) var(--y, 0), rgba(124, 58, 237, 0.2), transparent 80%);
 }
 
 /* Add backdrop blur for better effect */
