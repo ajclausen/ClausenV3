@@ -182,7 +182,7 @@ button {
 /* Links */
 @layer base {
   a {
-    color: var(--dracula-foreground);
+    color: var(--dracula-green);
     text-decoration: none;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
@@ -222,12 +222,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--dracula-comment);
+  color: var(--dracula-foreground);
 }
 
 /* Ensure paragraphs get the right color */
 main p {
-  color: var(--dracula-comment);
+  color: var(--dracula-foreground);
 }
 
 /* Big headings */
@@ -334,6 +334,6 @@ main {
 /* Custom component classes */
 @layer components {
   .link-primary {
-    @apply font-medium text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink;
+    @apply font-medium text-dracula-green hover:text-dracula-pink focus-visible:text-dracula-pink;
   }
 }

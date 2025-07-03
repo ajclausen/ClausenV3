@@ -26,7 +26,7 @@ export default function ProjectArchive() {
           className="mt-12 w-full border-collapse text-left border-b border-dracula-current-line/10"
         >
           <thead>
-            <tr className="text-left text-sm font-semibold uppercase tracking-wider text-dracula-comment border-b border-dracula-current-line/10">
+            <tr className="text-left text-sm font-semibold uppercase tracking-wider text-dracula-foreground border-b border-dracula-current-line/10">
               <th className="py-4 pr-8 text-sm font-semibold text-dracula-foreground">Year</th>
               <th className="py-4 pr-8 text-sm font-semibold text-dracula-foreground">Project</th>
               <th className="hidden lg:table-cell py-4 pr-8 text-sm font-semibold text-dracula-foreground">Made at</th>
@@ -36,8 +36,8 @@ export default function ProjectArchive() {
           </thead>
           <tbody className="divide-y divide-dracula-current-line/60">
             {projects.map((project) => (
-              <tr key={project.id} className="align-top text-sm text-dracula-comment border-b border-dracula-current-line/10 last:border-none">
-                <td className="py-4 pr-4 whitespace-nowrap text-dracula-comment">{project.year}</td>
+              <tr key={project.id} className="align-top text-sm text-dracula-foreground border-b border-dracula-current-line/10 last:border-none">
+                <td className="py-4 pr-4 whitespace-nowrap text-dracula-foreground">{project.year}</td>
                 <td className="py-4 pr-4 font-medium text-dracula-foreground">
                   {project.url ? (
                     <Link
@@ -69,7 +69,7 @@ export default function ProjectArchive() {
                       href={project.url}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="inline-flex items-center text-dracula-foreground hover:text-dracula-pink focus-visible:text-dracula-pink"
+                      className="inline-flex items-center text-dracula-green hover:text-dracula-pink focus-visible:text-dracula-pink"
                     >
                       {new URL(project.url).hostname}
                       <span aria-hidden="true" className="ml-1">↗</span>
