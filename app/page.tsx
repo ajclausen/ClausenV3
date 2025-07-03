@@ -1,10 +1,10 @@
 "use client";
 
 import { experiences } from "@/data/experience";
-import { projects } from "@/data/projects";
+// import { projects } from "@/data/projects"; // Temporarily unused
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image"; // Temporarily unused
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("");
