@@ -288,7 +288,7 @@ export default function Home() {
                   <a
                     className="inline-flex items-center font-medium leading-tight text-dracula-foreground group"
                     aria-label="View Full Resume (opens in a new tab)"
-                    href="/resume.pdf"
+                    href="/Andrew Clausen's Resume.pdf"
                   >
                     <span>
                       View Full{" "}
