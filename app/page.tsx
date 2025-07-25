@@ -211,7 +211,6 @@ export default function Home() {
                                 rel="noreferrer noopener"
                                 aria-label={`${experience.title} at ${experience.company} (opens in a new tab)`}
                               >
-                                <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                                 <span>
                                   {experience.title} ·{" "}
                                   <span className="inline-block">
@@ -289,6 +288,8 @@ export default function Home() {
                     className="inline-flex items-center font-medium leading-tight text-dracula-foreground group"
                     aria-label="View Full Resume (opens in a new tab)"
                     href="/Andrew Clausen's Resume.pdf"
+                    target="_blank"
+                    rel="noreferrer noopener"
                   >
                     <span>
                       View Full{" "}
