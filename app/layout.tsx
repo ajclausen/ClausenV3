@@ -46,10 +46,10 @@ export default function RootLayout({
               (function() {
                 try {
                   const savedTheme = localStorage.getItem('theme');
-                  const theme = (savedTheme === 'alucard' || savedTheme === 'midnight' || savedTheme === 'forest' || savedTheme === 'dracula') ? savedTheme : 'midnight';
+                  const theme = (savedTheme === 'alucard' || savedTheme === 'midnight' || savedTheme === 'forest' || savedTheme === 'dracula') ? savedTheme : 'alucard';
                   document.documentElement.classList.add(theme);
                 } catch (e) {
-                  document.documentElement.classList.add('midnight');
+                  document.documentElement.classList.add('alucard');
                 }
               })();
             `,
