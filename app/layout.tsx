@@ -46,7 +46,7 @@ export default function RootLayout({
               (function() {
                 try {
                   const savedTheme = localStorage.getItem('theme');
-                  const theme = savedTheme === 'alucard' ? 'alucard' : 'dracula';
+                  const theme = (savedTheme === 'alucard' || savedTheme === 'midnight' || savedTheme === 'forest') ? savedTheme : 'dracula';
                   document.documentElement.classList.add(theme);
                 } catch (e) {
                   document.documentElement.classList.add('dracula');

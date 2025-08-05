@@ -2,11 +2,11 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'dracula' | 'alucard';
+type Theme = 'dracula' | 'alucard' | 'midnight' | 'forest';
 
 interface ThemeContextType {
   theme: Theme;
-  toggleTheme: () => void;
+  setTheme: (theme: Theme) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -19,7 +19,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setMounted(true);
     // Get theme from localStorage after mount
     const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme === 'alucard' || savedTheme === 'dracula') {
+    if (savedTheme === 'alucard' || savedTheme === 'dracula' || savedTheme === 'midnight' || savedTheme === 'forest') {
       setTheme(savedTheme);
     }
   }, []);
@@ -27,16 +27,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (mounted) {
       // Remove previous theme class
-      document.documentElement.classList.remove('dracula', 'alucard');
+      document.documentElement.classList.remove('dracula', 'alucard', 'midnight', 'forest');
       // Add new theme class
       document.documentElement.classList.add(theme);
       localStorage.setItem('theme', theme);
     }
   }, [theme, mounted]);
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'dracula' ? 'alucard' : 'dracula');
-  };
 
   // Prevent flash by not rendering children until mounted
   if (!mounted) {
@@ -44,7 +40,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );
