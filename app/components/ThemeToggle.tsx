@@ -8,7 +8,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 z-50 p-3 rounded-full bg-dracula-current-line/30 hover:bg-dracula-current-line/50 backdrop-blur-sm transition-all duration-200"
+      className="fixed top-4 right-4 z-50 p-3 rounded-full hover:bg-dracula-current-line/20 transition-all duration-200"
       aria-label={`Switch to ${theme === 'dracula' ? 'light' : 'dark'} mode`}
     >
       {theme === 'dracula' ? (

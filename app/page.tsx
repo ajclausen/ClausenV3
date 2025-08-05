@@ -40,7 +40,7 @@ export default function Home() {
 
       <div className="lg:flex lg:justify-between">
         {/* Left side - Fixed header and nav */}
-        <header className="px-6 py-24 lg:bg-transparent lg:backdrop-blur-none lg:shadow-none lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[45%] lg:flex-col lg:justify-between lg:py-24 lg:px-12 lg:will-change-transform">
+        <header className="px-6 pt-16 pb-12 lg:bg-transparent lg:backdrop-blur-none lg:shadow-none lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[45%] lg:flex-col lg:justify-between lg:py-24 lg:px-12 lg:will-change-transform">
           <div>
             <h1 className="text-[3rem] font-bold tracking-[-0.025em] leading-none text-dracula-foreground">
               <Link href="/">Andrew Clausen</Link>
