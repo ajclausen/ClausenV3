@@ -31,6 +31,9 @@ const config: Config = {
         'light-navy': 'var(--light-navy)',
         'lightest-navy': 'var(--lightest-navy)',
         highlight: 'var(--highlight)',
+        slate: 'var(--slate)',
+        'light-slate': 'var(--light-slate)',
+        'lightest-slate': 'var(--lightest-slate)',
       },
       fontFamily: {
         sans: ['var(--font-sans)'],

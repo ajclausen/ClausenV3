@@ -40,7 +40,7 @@ export default function Home() {
 
       <div className="lg:flex lg:justify-between">
         {/* Left side - Fixed header and nav */}
-        <header className="px-6 py-24 bg-dracula-current-line/50 backdrop-blur-sm shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:bg-transparent lg:backdrop-blur-none lg:shadow-none lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[45%] lg:flex-col lg:justify-between lg:py-24 lg:px-12 lg:will-change-transform">
+        <header className="px-6 py-24 lg:bg-transparent lg:backdrop-blur-none lg:shadow-none lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[45%] lg:flex-col lg:justify-between lg:py-24 lg:px-12 lg:will-change-transform">
           <div>
             <h1 className="text-[3rem] font-bold tracking-[-0.025em] leading-none text-dracula-foreground">
               <Link href="/">Andrew Clausen</Link>
@@ -147,7 +147,7 @@ export default function Home() {
           <div className="max-w-2xl">
             {/* About Section */}
             <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dracula-current-line/50 backdrop-blur-sm px-6 py-5 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">About</h2>
               </div>
               <div>
@@ -189,7 +189,7 @@ export default function Home() {
 
             {/* Experience Section */}
             <section id="experience" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Work experience">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dracula-current-line/50 backdrop-blur-sm px-6 py-5 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">Experience</h2>
               </div>
               <div>
@@ -287,7 +287,7 @@ export default function Home() {
                   <a
                     className="inline-flex items-center font-medium leading-tight text-dracula-foreground group"
                     aria-label="View Full Resume (opens in a new tab)"
-                    href="/Andrew Clausen's Resume.pdf"
+                    href="/andrew-clausen-resume.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
@@ -317,7 +317,7 @@ export default function Home() {
 
             {/* Projects Section - Temporarily disabled for launch
             <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Selected projects">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dracula-current-line/50 backdrop-blur-sm px-6 py-5 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">Projects</h2>
               </div>
               <div>
