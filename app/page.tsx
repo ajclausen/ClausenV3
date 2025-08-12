@@ -535,7 +535,7 @@ export default function Home() {
                   <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-dracula-current-line/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
                   <div className="relative z-10">
                     <p className="mb-6 text-sm leading-relaxed text-dracula-foreground">
-                      I'm always interested in hearing about new opportunities and challenges. Whether you have a question or just want to say hi, feel free to reach out!
+                      I&apos;m always interested in hearing about new opportunities and challenges. Whether you have a question or just want to say hi, feel free to reach out!
                     </p>
                     
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -628,7 +628,7 @@ export default function Home() {
                     
                     <div className="mt-8 pt-8 border-t border-dracula-current-line/30">
                       <p className="text-sm text-dracula-comment">
-                        I'm always interested in hearing about new opportunities and challenges. Whether you have a question or just want to say hi, feel free to reach out!
+                        I&apos;m always interested in hearing about new opportunities and challenges. Whether you have a question or just want to say hi, feel free to reach out!
                       </p>
                     </div>
                   </div>

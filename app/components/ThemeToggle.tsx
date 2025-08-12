@@ -10,6 +10,45 @@ export default function ThemeToggle() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const themes = [
+    { 
+      id: 'alucard' as const, 
+      name: 'Alucard',
+      description: 'Clean light',
+      colors: ['#f8f8f2', '#7c3aed', '#00a550', '#ff1493']
+    },
+    { 
+      id: 'dracula' as const, 
+      name: 'Dracula',
+      description: 'Classic dark',
+      colors: ['#282a36', '#bd93f9', '#50fa7b', '#ff79c6']
+    },
+    { 
+      id: 'midnight' as const, 
+      name: 'Midnight',
+      description: 'Deep blue',
+      colors: ['#0f172a', '#a78bfa', '#10b981', '#ec4899']
+    },
+    { 
+      id: 'forest' as const, 
+      name: 'Forest',
+      description: 'Nature green',
+      colors: ['#f0f4f0', '#7c3aed', '#059669', '#db2777']
+    },
+    { 
+      id: 'rosepetal' as const, 
+      name: 'Rose Petal',
+      description: 'Soft pink',
+      colors: ['#fff5f7', '#a855f7', '#059669', '#ec4899']
+    },
+    { 
+      id: 'cherryblossom' as const, 
+      name: 'Cherry Blossom',
+      description: 'Dark pink',
+      colors: ['#2d1b2e', '#e0aaff', '#80ff72', '#ff79c6']
+    },
+  ];
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -63,46 +102,7 @@ export default function ThemeToggle() {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [isOpen, selectedIndex, theme, setTheme]);
-
-  const themes = [
-    { 
-      id: 'alucard' as const, 
-      name: 'Alucard',
-      description: 'Clean light',
-      colors: ['#f8f8f2', '#7c3aed', '#00a550', '#ff1493']
-    },
-    { 
-      id: 'dracula' as const, 
-      name: 'Dracula',
-      description: 'Classic dark',
-      colors: ['#282a36', '#bd93f9', '#50fa7b', '#ff79c6']
-    },
-    { 
-      id: 'midnight' as const, 
-      name: 'Midnight',
-      description: 'Deep blue',
-      colors: ['#0f172a', '#a78bfa', '#10b981', '#ec4899']
-    },
-    { 
-      id: 'forest' as const, 
-      name: 'Forest',
-      description: 'Nature green',
-      colors: ['#f0f4f0', '#7c3aed', '#059669', '#db2777']
-    },
-    { 
-      id: 'rosepetal' as const, 
-      name: 'Rose Petal',
-      description: 'Soft pink',
-      colors: ['#fff5f7', '#a855f7', '#059669', '#ec4899']
-    },
-    { 
-      id: 'cherryblossom' as const, 
-      name: 'Cherry Blossom',
-      description: 'Dark pink',
-      colors: ['#2d1b2e', '#e0aaff', '#80ff72', '#ff79c6']
-    },
-  ];
+  }, [isOpen, selectedIndex, theme, setTheme, themes]);
 
   const currentTheme = themes.find(t => t.id === theme);
 
@@ -125,7 +125,7 @@ export default function ThemeToggle() {
     if (isOpen && selectedIndex >= 0) {
       setPreviewTheme(themes[selectedIndex].id);
     }
-  }, [selectedIndex, isOpen]);
+  }, [selectedIndex, isOpen, themes]);
 
   return (
     <div className="fixed top-4 right-4 z-50" ref={dropdownRef}>
