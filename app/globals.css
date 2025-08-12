@@ -124,7 +124,7 @@ html.forest {
 
 /* Alucard Theme (Light) */
 html.alucard {
-  /* Alucard Light Theme Colors */
+  /* Inverted Dracula (light theme) */
   --dracula-background: #f8f8f2;
   --dracula-current-line: #e0e0e0;
   --dracula-foreground: #282a36;
@@ -147,7 +147,71 @@ html.alucard {
   --white: var(--dracula-foreground);
   --cyan: var(--dracula-cyan);
   --highlight: var(--dracula-purple);
-  
+
+  --slate-400: var(--dracula-comment);
+  --slate-200: var(--dracula-foreground);
+  --bg-dark: var(--dracula-background);
+  --teal-300: var(--dracula-cyan);
+}
+
+/* Rose Petal Theme - Light Pink Theme */
+html.rosepetal {
+  /* Light pink-based color palette */
+  --dracula-background: #fff5f7;  /* Very light pink background */
+  --dracula-current-line: #ffe0e8;  /* Soft pink for highlights */
+  --dracula-foreground: #4a1e2c;  /* Deep burgundy text */
+  --dracula-comment: #8b5a6f;  /* Muted rose for secondary text */
+  --dracula-cyan: #0891b2;  /* Teal blue for contrast */
+  --dracula-green: #059669;  /* Emerald green for links */
+  --dracula-orange: #ea580c;  /* Bright orange accents */
+  --dracula-pink: #ec4899;  /* Vibrant pink for primary accents */
+  --dracula-purple: #a855f7;  /* Bright purple for interactive */
+  --dracula-red: #e11d48;  /* Rose red for errors */
+  --dracula-yellow: #eab308;  /* Golden yellow */
+
+  /* Legacy color mappings */
+  --navy: var(--dracula-background);
+  --light-navy: var(--dracula-current-line);
+  --lightest-navy: var(--dracula-current-line);
+  --slate: var(--dracula-comment);
+  --light-slate: var(--dracula-foreground);
+  --lightest-slate: var(--dracula-foreground);
+  --white: var(--dracula-foreground);
+  --cyan: var(--dracula-cyan);
+  --highlight: var(--dracula-purple);
+
+  --slate-400: var(--dracula-comment);
+  --slate-200: var(--dracula-foreground);
+  --bg-dark: var(--dracula-background);
+  --teal-300: var(--dracula-cyan);
+}
+
+/* Cherry Blossom Theme - Dark Pink Theme */
+html.cherryblossom {
+  /* Dark pink-based color palette */
+  --dracula-background: #2d1b2e;  /* Deep plum background */
+  --dracula-current-line: #4a2c4e;  /* Dark magenta for highlights */
+  --dracula-foreground: #ffd6e8;  /* Light pink text */
+  --dracula-comment: #c77dff;  /* Lavender for secondary text */
+  --dracula-cyan: #7df9ff;  /* Electric cyan for contrast */
+  --dracula-green: #80ff72;  /* Lime green for links */
+  --dracula-orange: #ffb86c;  /* Peach orange */
+  --dracula-pink: #ff79c6;  /* Hot pink for primary accents */
+  --dracula-purple: #e0aaff;  /* Light purple for interactive */
+  --dracula-red: #ff6b9d;  /* Bright pink-red for errors */
+  --dracula-yellow: #fff47d;  /* Pastel yellow */
+
+  /* Legacy color mappings */
+  --navy: var(--dracula-background);
+  --light-navy: var(--dracula-current-line);
+  --lightest-navy: var(--dracula-current-line);
+  --slate: var(--dracula-comment);
+  --light-slate: var(--dracula-foreground);
+  --lightest-slate: var(--dracula-foreground);
+  --white: var(--dracula-foreground);
+  --cyan: var(--dracula-cyan);
+  --highlight: var(--dracula-purple);
+
   --slate-400: var(--dracula-comment);
   --slate-200: var(--dracula-foreground);
   --bg-dark: var(--dracula-background);
@@ -246,6 +310,14 @@ html.midnight body::before {
 
 html.forest body::before {
   background: radial-gradient(700px at var(--x, 0) var(--y, 0), rgba(5, 150, 105, 0.18), transparent 70%);
+}
+
+html.rosepetal body::before {
+  background: radial-gradient(700px at var(--x, 0) var(--y, 0), rgba(236, 72, 153, 0.15), transparent 70%);
+}
+
+html.cherryblossom body::before {
+  background: radial-gradient(700px at var(--x, 0) var(--y, 0), rgba(255, 121, 198, 0.20), transparent 70%);
 }
 
 /* Add backdrop blur for better effect */

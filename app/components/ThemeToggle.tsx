@@ -40,6 +40,16 @@ export default function ThemeToggle() {
       name: 'Forest',
       description: 'Green'
     },
+    { 
+      id: 'rosepetal' as const, 
+      name: 'Rose Petal',
+      description: 'Light Pink'
+    },
+    { 
+      id: 'cherryblossom' as const, 
+      name: 'Cherry Blossom',
+      description: 'Dark Pink'
+    },
   ];
 
   return (

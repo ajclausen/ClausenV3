@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'dracula' | 'alucard' | 'midnight' | 'forest';
+type Theme = 'dracula' | 'alucard' | 'midnight' | 'forest' | 'rosepetal' | 'cherryblossom';
 
 interface ThemeContextType {
   theme: Theme;
@@ -19,7 +19,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setMounted(true);
     // Get theme from localStorage after mount
     const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme === 'alucard' || savedTheme === 'dracula' || savedTheme === 'midnight' || savedTheme === 'forest') {
+    if (savedTheme === 'alucard' || savedTheme === 'dracula' || savedTheme === 'midnight' || savedTheme === 'forest' || savedTheme === 'rosepetal' || savedTheme === 'cherryblossom') {
       setTheme(savedTheme);
     }
   }, []);
@@ -27,7 +27,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (mounted) {
       // Remove previous theme class
-      document.documentElement.classList.remove('dracula', 'alucard', 'midnight', 'forest');
+      document.documentElement.classList.remove('dracula', 'alucard', 'midnight', 'forest', 'rosepetal', 'cherryblossom');
       // Add new theme class
       document.documentElement.classList.add(theme);
       localStorage.setItem('theme', theme);
