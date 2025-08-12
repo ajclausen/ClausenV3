@@ -140,7 +140,7 @@ export default function ThemeToggle() {
           {currentTheme?.colors.map((color, i) => (
             <div
               key={i}
-              className="w-3 h-3 rounded-full border border-dracula-foreground/20"
+              className="w-3 h-3 rounded-full ring-1 ring-dracula-foreground/30"
               style={{ backgroundColor: color }}
             />
           ))}
@@ -198,7 +198,7 @@ export default function ThemeToggle() {
                     <div
                       key={i}
                       className={`
-                        w-2.5 h-2.5 rounded-full
+                        w-2.5 h-2.5 rounded-full ring-1 ring-dracula-foreground/30
                         ${theme === t.id ? 'ring-2 ring-offset-1 ring-dracula-cyan ring-offset-dracula-background' : ''}
                       `}
                       style={{ backgroundColor: color }}
