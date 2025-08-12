@@ -1,16 +1,18 @@
 "use client";
 
 import { experiences } from "@/data/experience";
+import { education } from "@/data/education";
+import { certifications } from "@/data/certifications";
 // import { projects } from "@/data/projects"; // Temporarily unused
 import { useEffect, useState } from "react";
 import Link from "next/link";
-// import Image from "next/image"; // Temporarily unused
+import Image from "next/image";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const sections = ["about", "experience"]; // , "projects"];
+    const sections = ["about", "experience", "education", "certifications", "contact"]; // , "projects"];
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -84,6 +86,54 @@ export default function Home() {
                         : "text-dracula-foreground group-hover:text-dracula-pink group-focus-visible:text-dracula-pink"
                     }`}>
                       Experience
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#education" className="group flex items-center py-3">
+                    <span className={`nav-indicator mr-4 h-px transition-all ${
+                      activeSection === "education" 
+                        ? "w-16 bg-lightest-slate" 
+                        : "w-8 bg-dracula-comment group-hover:w-16 group-hover:bg-dracula-foreground group-focus-visible:w-16 group-focus-visible:bg-dracula-foreground"
+                    }`}></span>
+                    <span className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors ${
+                      activeSection === "education"
+                        ? "text-dracula-foreground"
+                        : "text-dracula-foreground group-hover:text-dracula-pink group-focus-visible:text-dracula-pink"
+                    }`}>
+                      Education
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#certifications" className="group flex items-center py-3">
+                    <span className={`nav-indicator mr-4 h-px transition-all ${
+                      activeSection === "certifications" 
+                        ? "w-16 bg-lightest-slate" 
+                        : "w-8 bg-dracula-comment group-hover:w-16 group-hover:bg-dracula-foreground group-focus-visible:w-16 group-focus-visible:bg-dracula-foreground"
+                    }`}></span>
+                    <span className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors ${
+                      activeSection === "certifications"
+                        ? "text-dracula-foreground"
+                        : "text-dracula-foreground group-hover:text-dracula-pink group-focus-visible:text-dracula-pink"
+                    }`}>
+                      Certifications
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="group flex items-center py-3">
+                    <span className={`nav-indicator mr-4 h-px transition-all ${
+                      activeSection === "contact" 
+                        ? "w-16 bg-lightest-slate" 
+                        : "w-8 bg-dracula-comment group-hover:w-16 group-hover:bg-dracula-foreground group-focus-visible:w-16 group-focus-visible:bg-dracula-foreground"
+                    }`}></span>
+                    <span className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors ${
+                      activeSection === "contact"
+                        ? "text-dracula-foreground"
+                        : "text-dracula-foreground group-hover:text-dracula-pink group-focus-visible:text-dracula-pink"
+                    }`}>
+                      Contact
                     </span>
                   </a>
                 </li>
@@ -311,6 +361,214 @@ export default function Home() {
                       </span>
                     </span>
                   </a>
+                </div>
+              </div>
+            </section>
+
+            {/* Education Section */}
+            <section id="education" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Education">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">Education</h2>
+              </div>
+              <div>
+                <ol className="group/list">
+                  {education.map((edu) => (
+                    <li key={edu.id} className="mb-12">
+                      <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-dracula-current-line/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+                        <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-dracula-foreground sm:col-span-2" aria-label={edu.dateRange}>
+                          {edu.dateRange}
+                        </header>
+                        <div className="z-10 sm:col-span-6">
+                          <h3 className="font-medium leading-snug text-dracula-foreground">
+                            <div>
+                              <a
+                                className="inline-flex items-baseline font-medium leading-tight text-dracula-green hover:text-dracula-pink focus-visible:text-dracula-pink group/link text-base"
+                                href={edu.institutionUrl}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                aria-label={`${edu.degree} in ${edu.field} at ${edu.institution} (opens in a new tab)`}
+                              >
+                                <span>
+                                  {edu.degree} · {edu.field}
+                                </span>
+                                {edu.institutionUrl !== "#" && (
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                                    aria-hidden="true"
+                                  >
+                                    <path
+                                      fillRule="evenodd"
+                                      d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                      clipRule="evenodd"
+                                    />
+                                  </svg>
+                                )}
+                              </a>
+                            </div>
+                            <div className="text-dracula-comment text-sm mt-0.5">{edu.institution} · {edu.location}</div>
+                          </h3>
+                          {edu.description && (
+                            <p className="mt-2 text-sm leading-relaxed text-dracula-foreground">{edu.description}</p>
+                          )}
+                          {edu.achievements && (
+                            <ul className="mt-2 text-sm leading-relaxed text-dracula-foreground">
+                              {edu.achievements.map((achievement, index) => (
+                                <li key={index} className="mt-1">
+                                  <span className="text-dracula-cyan mr-2">▸</span>
+                                  {achievement}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                          {edu.relevantCourses && (
+                            <div className="mt-3">
+                              <div className="text-xs font-semibold text-dracula-comment mb-2">Relevant Coursework:</div>
+                              <ul className="flex flex-wrap" aria-label="Relevant courses">
+                                {edu.relevantCourses.map((course) => (
+                                  <li key={course} className="mr-1.5 mt-2">
+                                    <div className="flex items-center rounded-full bg-dracula-cyan/10 px-3 py-1 text-xs font-medium leading-5 text-dracula-cyan">
+                                      {course}
+                                    </div>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </section>
+
+            {/* Certifications Section */}
+            <section id="certifications" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Certifications">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">Certifications</h2>
+              </div>
+              <div>
+                <div className="flex flex-wrap gap-4">
+                  {certifications.map((cert) => (
+                    <div key={cert.id} className="group">
+                      <div className="flex items-center gap-4 p-4 rounded-lg bg-dracula-current-line/10 transition-all hover:bg-dracula-current-line/20">
+                        {/* Compact Badge */}
+                        <Image
+                          src={cert.badgeImage}
+                          alt={`${cert.name} certification badge`}
+                          width={60}
+                          height={60}
+                          className="flex-shrink-0"
+                        />
+                        
+                        {/* Certification Info */}
+                        <div className="flex-1">
+                          <h3 className="font-medium text-dracula-foreground">
+                            {cert.name}
+                          </h3>
+                          <div className="text-sm text-dracula-comment">
+                            Earned {cert.dateEarned}
+                          </div>
+                          {cert.verificationUrl && (
+                            <a
+                              href={cert.verificationUrl}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              className="inline-flex items-center mt-1 text-xs font-medium text-dracula-green hover:text-dracula-pink transition-colors"
+                            >
+                              <svg
+                                className="mr-1 h-3 w-3"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                              </svg>
+                              Verify Badge
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Contact Section */}
+            <section id="contact" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Contact">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-dracula-foreground lg:sr-only">Contact</h2>
+              </div>
+              <div className="max-w-lg">
+                <p className="mb-6 text-dracula-foreground">
+                  I'm always interested in hearing about new opportunities and challenges. 
+                  Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+                
+                {/* Contact Form */}
+                <div className="rounded-lg bg-dracula-current-line/10 p-6">
+                  <h3 className="text-lg font-semibold text-dracula-foreground mb-4">Send a Message</h3>
+                  <form
+                    action="https://formspree.io/f/YOUR_FORM_ID"
+                    method="POST"
+                    className="space-y-4"
+                  >
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-dracula-foreground mb-1">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        className="w-full px-3 py-2 bg-dracula-background/50 border border-dracula-current-line/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-dracula-cyan focus:border-transparent text-dracula-foreground placeholder-dracula-comment/50"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-dracula-foreground mb-1">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        className="w-full px-3 py-2 bg-dracula-background/50 border border-dracula-current-line/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-dracula-cyan focus:border-transparent text-dracula-foreground placeholder-dracula-comment/50"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-dracula-foreground mb-1">
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        required
+                        className="w-full px-3 py-2 bg-dracula-background/50 border border-dracula-current-line/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-dracula-cyan focus:border-transparent text-dracula-foreground resize-none placeholder-dracula-comment/50"
+                        placeholder="Your message..."
+                      />
+                    </div>
+                    
+                    <button
+                      type="submit"
+                      className="w-full px-4 py-2.5 bg-dracula-cyan text-dracula-background font-medium rounded-lg hover:bg-dracula-green transition-colors focus:outline-none focus:ring-2 focus:ring-dracula-cyan focus:ring-offset-2 focus:ring-offset-dracula-background"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                  <p className="mt-3 text-xs text-dracula-comment text-center">
+                    Note: You'll need to set up Formspree or another form handler
+                  </p>
                 </div>
               </div>
             </section>
